@@ -1,7 +1,8 @@
 using System;
-using CommandService.AsyncDataServices;
-using CommandService.Data;
-using CommandService.EventProcessing;
+using CommandsService.AsyncDataServices;
+using CommandsService.Data;
+using CommandsService.EventProcessing;
+using CommandsService.SyncDataService.Grpc;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -28,6 +29,8 @@ namespace CommandsService
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddTransient<ICommandRepo, CommandRepo>();
             services.AddSingleton<IEventProcessor, EventProcessor>();
+            services.AddScoped<IPlatformDataClient, PlatformDataClient>();
+
             services.AddHostedService<MessageBusSubscriber>();
             services.AddSwaggerGen(
                 c =>
@@ -61,6 +64,8 @@ namespace CommandsService
                     endpoints.MapControllers();
                 }
             );
+
+            PrepDb.PrepPopulation(app);
         }
     }
 }

@@ -3,5 +3,9 @@ kubectl get pods
 kubectl apply -f .\rabbitmq-depl.yaml
 kubectl get services
 
+
+-- Apply deployment
+kubectl apply -f .\platform-depl.yaml
+
 -- Pull down and deploy latest Docker image
 kubectl rollout restart deployment platforms-depl

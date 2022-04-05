@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace CommandService.Models
+namespace CommandsService.Models
 {
     public class Platform
     {

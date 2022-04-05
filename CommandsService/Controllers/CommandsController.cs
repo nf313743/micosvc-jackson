@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
 using AutoMapper;
-using CommandService.Data;
-using CommandService.Dtos;
-using CommandService.Models;
+using CommandsService.Data;
+using CommandsService.Dtos;
+using CommandsService.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CommandService.Controllers
+namespace CommandsService.Controllers
 {
     [Route("api/c/platforms/{platformId}/[controller]")]
     [ApiController]

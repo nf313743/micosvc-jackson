@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using CommandService.Models;
+using CommandsService.Models;
 
-namespace CommandService.Data
+namespace CommandsService.Data
 {
     public class CommandRepo : ICommandRepo
     {
